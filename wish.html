@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Anniversary Techno Skills</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background:linear-gradient(135deg,#f5e9ff,#e9d5ff,#ede9fe);
+  color:#3b0764;
+  text-align:center;
+  padding:40px 20px;
+  overflow:hidden;
+  font-family:'Poppins',sans-serif;
+}
+
+.logo{
+  width:140px;
+  margin-bottom:20px;
+  animation:fadeIn 1s ease forwards;
+}
+
+.message{
+  max-width:900px;
+  line-height:1.8;
+  font-size:1.05rem;
+  animation:fadeIn 1s ease forwards;
+}
+
+.message p{margin-bottom:14px;}
+
+button{
+  margin-top:30px;
+  padding:14px 38px;
+  font-size:1.05rem;
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#c084fc,#a855f7);
+  color:white;
+  font-weight:600;
+  letter-spacing:0.5px;
+  box-shadow:0 10px 25px rgba(124,58,237,0.35);
+  transition:0.3s ease;
+}
+
+button:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 16px 35px rgba(124,58,237,0.45);
+}
+
+.hidden{opacity:0; pointer-events:none;}
+
+.final{
+  display:none;
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;
+  font-weight:700;
+  background:linear-gradient(135deg,#7c3aed,#d946ef);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 6px 18px rgba(0,0,0,0.15);
+  animation:pop 0.7s ease forwards;
+}
+
+.confetti{
+  position:fixed;
+  width:10px;
+  height:10px;
+  top:-10px;
+  animation:fall linear forwards;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes pop{
+  from{opacity:0; transform:scale(0.7);}
+  to{opacity:1; transform:scale(1);}
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(720deg); opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<!-- 🔽 Replace src with your actual logo file -->
+<img src="techno skill.png" alt="Techno Skills Logo" class="logo">
+
+<div id="content" class="message">
+  <p>Main first day se hi chulbuli thi — masti karti, thoda flirt karti aur kabhi-kabhi sir ki daant par ro bhi deti thi.</p>
+  <p>Sanket Sir mujhe meri “saas”… I mean mother-in-law jaise dekhte the — har baat par tokna, mazaak banana, taunt karna… aur main bhi kam nahi thi 😄</p>
+  <p>Main padhai mein thodi weak thi, isliye sir mujhe hamesha push karte the — kabhi gussa dila kar, kabhi hasa kar, kabhi rula kar… sirf isliye ki main grow karun.</p>
+  <p>Yahan humne hasa bhi, roya bhi, masti bhi ki… dosti bani bhi aur kabhi kabhi tooti bhi. Par kisi ko ignore kabhi nahi kiya.</p>
+  <p>Sir log teacher se zyada dost bane — guide kiya, sambhala aur har stage par believe kiya.</p>
+
+  <button id="celebrate">Celebrate 🎉</button>
+</div>
+
+<div id="final" class="final">
+  🎉 Happy 1st Anniversary Techno Skills 💜✨
+</div>
+
+<script>
+const btn = document.getElementById("celebrate");
+const content = document.getElementById("content");
+const final = document.getElementById("final");
+
+btn.addEventListener("click", () => {
+  content.classList.add("hidden");
+
+  setTimeout(() => {
+    content.style.display = "none";
+    final.style.display = "block";
+    launchConfetti();
+  }, 600);
+});
+
+function launchConfetti(){
+  for(let i=0;i<90;i++){
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random()*100 + "vw";
+    c.style.background = `hsl(${Math.random()*360},100%,70%)`;
+    c.style.animationDuration = (Math.random()*2 + 2) + "s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+}
+</script>
+
+</body>
+</html>

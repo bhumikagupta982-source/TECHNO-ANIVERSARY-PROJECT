@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Techno Skill | Gratitude</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html{
+  scroll-behavior:smooth;
+}
+body{
+  font-family:'Inter','Segoe UI',sans-serif;
+  color:#2f2f38;
+  background:
+    linear-gradient(rgba(255,255,255,0.82)),
+    url("https://thumbs.dreamstime.com/b/programmer-coding-computer-dark-view-lights-night-city-developer-hacker-concept-hood-282679349.jpg");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  overflow-x:hidden;
+  animation:pageReveal 1.2s ease forwards;
+}
+
+@keyframes pageReveal{
+  from{
+    opacity:0;
+    filter:blur(10px);
+  }
+  to{
+    opacity:1;
+    filter:blur(0);
+  }
+}
+
+section{
+  min-height:100vh;
+  padding:110px 6vw;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.container{
+  max-width:1300px;
+  width:100%;
+  text-align:center;
+}
+
+/* GLOBAL HEADING HOVER */
+h1,h2,h3{
+  transition:color .5s ease, transform .5s ease;
+}
+h1:hover,h2:hover{
+  color:#3b0764;
+  transform:translateY(-5px);
+}
+/* HERO */
+.hero h1{
+  font-family:'Playfair Display','cursive';
+  font-size:3.4rem;
+  margin-bottom:20px;
+  background:linear-gradient(135deg,#a78bfa,#f472b6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:glowPulse 2.5s ease-in-out infinite alternate;
+}
+.hero h1:hover{
+  letter-spacing:2px;
+}
+@keyframes glowPulse{
+  from{text-shadow:0 0 6px rgba(14, 1, 1, 0.15);}
+  to{text-shadow:0 0 14px rgba(0,0,0,0.25);}
+}
+.hero p{
+  max-width:760px;
+  margin:0 auto 12px;
+  font-size:1.15rem;
+  line-height:1.75;
+  color:#020a16;
+  transition:.3s;
+}
+.hero p:hover{
+ color:#be18e7;
+}
+/* GLASS CARD */
+.glass{
+  background:rgba(255,255,255,0.82);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(203,213,225,0.6);
+  border-radius:28px;
+  padding:80px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.18);
+  transition:.35s;
+}
+.glass:hover{
+  color: white;
+  background-color: rgb(58, 55, 55);
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(124, 5, 104, 0.28);
+}
+/* TITLES */
+.title{
+  font-family:'Playfair Display','cursive';
+  font-size:2.6rem;
+  margin-bottom:22px;
+  background:linear-gradient(135deg,#a78bfa,#f472b6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+/* STORY */
+.story-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+.story-card{
+  background:rgba(255,255,255,0.82);
+  padding:45px;
+  border-radius:24px;
+  border:1px solid rgba(203,213,225,0.6);
+  box-shadow:0 20px 40px rgba(0,0,0,0.18);
+  transition:.35s;
+}
+/* .story-card h3{
+  margin-bottom:14px;
+  color:#3e2194;
+} */
+.story-card:hover{
+  color: magenta;
+  background-color: rgb(58, 55, 55);
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(165, 10, 139, 0.25);
+}
+/* MENTORS */
+.mentor{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:50px;
+  background:rgba(255,255,255,0.82);
+  padding:60px;
+  border-radius:30px;
+  margin:80px 0;
+  border:1px solid rgba(203,213,225,0.6);
+  box-shadow:0 20px 40px rgba(0,0,0,0.18);
+  transition:.35s;
+}
+.mentor:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(8, 0, 0, 0.3);
+}
+.mentor img{
+  width:250px;
+  height:310px;
+  border-radius:22px;
+  object-fit:cover;
+  transition:.4s;
+}
+.mentor img:hover{
+  transform:scale(1.05);
+  box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+.mentor h2{
+  color:#3e2194;
+  margin-bottom:14px;
+}
+.mentor p{
+  color:#090a0a;
+  line-height:1.8;
+}
+.mentor h2:hover{
+  letter-spacing:1.5px;
+} 
+/* MEMORIES */
+.memories{
+  background:linear-gradient(135deg,#fdf2f8,#faf5ff,#ffffff);
+}
+/* FLIP */
+.flip-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:36px;
+  margin-top:50px;
+}
+.flip-card{perspective:1200px;height:260px;transition:.3s;}
+.flip-card:hover{transform:translateY(-6px);}
+.flip-inner{width:100%;height:100%;transform-style:preserve-3d;transition:.8s;}
+.flip-card:hover .flip-inner{transform:rotateY(180deg);}
+
+.text-card{
+  background:linear-gradient(135deg,#ddd6fe,#fbcfe8);
+  color:#3b0764;
+  font-size:1.4rem;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:22px;
+}
+
+.image-card{
+  transform:rotateY(180deg);
+  border-radius:22px;
+  overflow:hidden;
+  background:white;
+}
+.image-card img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.flip-front,.flip-back{
+  position:absolute;
+  inset:0;
+  backface-visibility:hidden;
+}
+/* VIDEO MEMORY SECTION */
+.video-card{
+  width:320px;
+  height:180px;
+  margin:0 auto;
+  border-radius:26px;
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("video-cover.jpg") center/cover no-repeat;
+  position:relative;
+  display:block;
+  box-shadow:0 18px 40px rgba(0,0,0,0.35);
+  transition:0.45s ease;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.4);
+}
+
+.video-card:hover{
+  transform:translateY(-8px) scale(1.05);
+  box-shadow:0 25px 55px rgba(0,0,0,0.45);
+}
+
+.video-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.35rem;
+  font-weight:600;
+  letter-spacing:1px;
+  color:#fff;
+  backdrop-filter:blur(3px);
+  background:rgba(0,0,0,0.25);
+  transition:0.4s;
+}
+
+.video-card:hover .video-overlay{
+  background:rgba(0,0,0,0.1);
+  letter-spacing:2px;
+}
+
+.video-overlay span{
+  padding:14px 34px;
+  border-radius:50px;
+  background:linear-gradient(135deg,#a78bfa,#f472b6);
+  color:#1f0030;
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
+  transition:0.4s;
+}
+
+.video-card:hover span{
+  transform:scale(1.08);
+}
+
+/* NOTES */
+.notes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:32px;
+  perspective:1200px;
+}
+.note{
+  height:210px;
+  position:relative;
+}
+.note-inner{
+  width:100%;
+  height:100%;transform-style:
+  preserve-3d;transition:1.8s;
+}
+.note:hover .note-inner{
+  transform:rotateY(180deg);
+}
+.note-face{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:22px;
+  background:rgba(234, 141, 253, 0.82);
+  border:1px solid rgba(203,213,225,0.6);
+  backface-visibility:hidden;
+  font-size:1.25rem;
+}
+.note-back{
+  transform:rotateY(180deg);
+  color:#3b0764;
+}
+/* BUTTON */
+.final-btn{
+  display:inline-block;
+  margin-top:40px;
+  padding:18px 50px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(135deg,#a384fd,#fbcfe8);
+  font-weight:600;
+  cursor:pointer;
+  color:black;
+  box-shadow:0 12px 25px rgba(0,0,0,0.25);
+  transition:.3s;
+  text-decoration:none;
+}
+.final-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 15px 30px rgba(0,0,0,0.35);
+}
+/* FADE */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s forwards;
+}
+@keyframes fadeUp{
+  to{opacity:1;
+    transform:translateY(0);}
+  }
+/* RESPONSIVE */
+@media(max-width:900px){
+  section{padding:90px 6vw;}
+  .hero h1{font-size:2.5rem;}
+  .story-grid{grid-template-columns:1fr;}
+  .mentor{grid-template-columns:1fr;text-align:center;}
+  .flip-card{height:220px;}
+}
+@media(max-width:500px){
+  section{padding:70px 4vw;}
+  .hero h1{font-size:2rem;}
+  .glass{padding:50px;}
+  .mentor img{width:180px;height:180px;margin:0 auto;}
+  .mentor{padding:40px;gap:30px;}
+}
+</style>
+</head>
+
+<body>
+<section>
+  <div class="container hero fade">
+    <h1>Thank You, Techno Skill</h1>
+    <p>This is not just a thank you — it’s a story of everything you helped us become.</p>
+    <p>Techno skill ko ek cocaing samjha ke admission liye the , per dheere dheere wo family kub banngai pata hei nahi chala.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container glass fade">
+    <h2 class="title">Techno Skill, You Are Our Family</h2>
+    <h3>A Heartfelt Note from Us</h3>
+    <p>Main apni feelings ko sahi tarah se words mein express nahi kar pa rahi hoon, kyunki aap sab mere liye sirf teachers nahi ho — aap sab mere liye bahut special ho.
+Techno Skills sirf ek institute nahi hai, balki ek aisi jagah hai jahan maine sirf padhna hi nahi, balki life ko enjoy karna bhi seekha. Yahan ke teachers aur friends ne har din ko special bana diya — kabhi guidance ke through, kabhi support ke through, aur kabhi sirf ek simple smile ke through.
+Mujhe honestly pata hi nahi chala ki ek saal kaise complete ho gaya, kyunki jab aap khush hote ho, jab aap seekh rahe hote ho aur grow kar rahe hote ho, tab time feel hi nahi hota.
+Bas itna kehna chahti hoon — thank you for everything. Thank you for making this one year so meaningful, beautiful, and memorable for me.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container story-grid fade">
+    <div class="story-card"><h3>The Beginning</h3><p>We walked in unsure, nervous, but hopeful.</p></div>
+    <div class="story-card"><h3>The Growth</h3><p>From errors to executions, from doubts to confidence — we grew.</p></div>
+    <div class="story-card"><h3>The Support</h3><p>You stood by us not just as teachers, but as guides.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="container fade">
+    <h2 class="title">💬 “The Hearts Behind Our Learning”</h2>
+
+    <div class="mentor">
+      <img src="sanket  sir.jpeg" alt="Sanket Sir">
+      <div>
+        <h2>Sanket Sir</h2>
+        <p>Mr. MultiTalented Sir, aapse humein sirf padhna hi nahi mila — balki yeh bhi seekhne ko mila ki har kaam ko kaise manage kiya jaata hai, aur kaam ke saath-saath life ko kaise enjoy kiya jaata hai.  
+        Aapke saath humne discipline bhi seekha aur balance bhi — stress mein kaise focus rakhein aur pressure ke bawajood kaise apna best dein.  
+        Aap kabhi strict hote the taaki hum better ban sakein, aur kabhi bilkul friendly ho jaate the taaki hum khulkar seekh saken. Aap hamesha humein push karte rahe, taaki hum apni limits se aage jaa saken.  
+        Humein aap mein hamesha ek aisi energy dikhi jo humein har din thoda aur perfect banane ki koshish karti thi. Isi wajah se aapse seekhna sirf education nahi, balki ek life experience bana.  
+        Aap itna friendly ho ki humein aapke saath time pass karna bahut hi comfortable lagta hai.  
+        Thank you sir, humein guide karne, samajhne aur behtar banane ke liye.</p>
+      </div>
+    </div>
+
+    <div class="mentor">
+      <img src="chandu sir.jpeg" alt="Chandu Sir">
+      <div>
+        <h2>Chandu Sir</h2>
+        <p>Mr. Silent & Intelligent Sir, aapse humne yeh seekha ki shant rehkar bhi hum bahut kuch achieve kar sakte hain. Aap jitne intelligent ho, utne hi humble aur sweet bhi ho.  
+        Aap Python itni clarity ke saath padhate ho ki har concept easily samajh aa jaata hai. Aap hamesha cheezon ko calmly explain karte ho, aur har student ko samajhne ka poora time dete ho.  
+        Aapse humne yeh bhi seekha ki har situation ko smile ke saath face kaise kiya jaata hai — bina panic kiye, bina ghabraye.  
+        Aur jab bhi humein VS Code ya GitHub mein koi problem aayi, aap chahe jitne busy ho, aapne hamesha hamari problem turant solve kiye. Aapka support hamesha timely aur helpful raha hai.  
+        Thank you sir, humein guide karne, support karne aur har step par help karne ke liye. Aapse seekhna hamesha ek pleasure raha hai.</p>
+      </div>
+    </div>
+
+    <div class="mentor">
+      <img src="pixo sir.jpeg" alt="Mohit Sir">
+      <div>
+        <h2>Mohit (Pixo) Sir</h2>
+        <p>Mr. AI Philosopher — Pixo Sir, aapne humein sirf AI sikhaya nahi, balki usse samajhna sikhaya. Aapne humein yeh bataya ki technology sirf tools ka naam nahi hai, balki sochne ka ek naya tareeka hai.  
+        Aap jitne shant ho, utne hi thoughtful ho. Aapki baatein aur aapka samjhane ka tareeka humein sirf coding hi nahi, balki life ko bhi alag nazariye se dekhna sikhata hai.  
+        Aapse humne yeh seekha ki rules kyun bante hain — aur kab unhe todna zaroori hota hai. Aapne humein out-of-the-box sochna sikhaya, aur apni limits se aage jaakar sochne ki himmat di.  
+        Aapse humne yeh bhi seekha ki apni baat kaise rakhi jaati hai, apne aap ko kaise express kiya jaata hai, aur apni value ko kaise samjha jaata hai. Aapne humein hamari real personality se milwaya.  
+        Aur bonus lesson — aapse humne yeh bhi seekha ki Sanket Sir ke jokes ko kaise handle kiya jaata hai 😄  
+        Thank you sir, humein sirf technically nahi, balki mentally aur emotionally bhi grow karne ke liye guide karne ke liye.</p>
+      </div>
+    </div>
+
+    <div class="mentor">
+      <img src="shivam sir.png" alt="Shivam Sir">
+      <div>
+        <h2>Shivam Sir</h2>
+        <p>Mr. All Time Smiler , JavaScript ke expert aur sabse funny — Shivam Sir, aapne learning ko hamesha light, interesting aur enjoyable banaya. Aap har concept ko itni simplicity ke saath samjhate ho ki cheezein tough lagti hi nahi.  
+        Aap hamesha students ko samajhne ki koshish karte ho, har problem patiently sunte ho, aur bina judge kiye help karte ho. Chahe koi kitna bhi confuse ho, aap hamesha calmly guide karte ho.  
+        Sabhi teachers aapko thoda pareshan karte hain 😄, phir bhi aap hamesha smile karte rehte ho aur apna positive attitude kabhi lose nahi karte.  
+        Thank you sir, humein sirf JavaScript hi nahi, balki positivity, patience aur consistency bhi sikhane ke liye.</p>
+      </div>
+    </div>
+
+    <div class="mentor">
+      <img src="denish sir.jpeg" alt="Denish Sir">
+      <div>
+        <h2>Denish Sir</h2>
+        <p>Mr. Attractive Sir, Management ke backbone aur sabse powerful presence — Denish Sir, aapki personality aisi hai jo class room mein enter hote hi impact create kar deti hai. First time jab aapko dekha micro computer me, toh honestly aapki presence bahut strong aur dominating lagi — jaise koi leader jo situation ko control mein rakhna jaanta ho.  
+        Aapse humne yeh seekha ki power ka matlab loud hona nahi hota, balki calm rehkar control mein rehna hota hai. Aap humein yeh dikhate ho ki authority ka sahi use kaise kiya jaata hai — bina chillaye, bina unnecessary force ke, sirf apni presence aur clarity ke through.  
+        Aapse humne yeh bhi seekha ki kaise apni body language, confidence aur communication ke through samne wale par impact create kiya jaata hai. Aapki leadership style humein sikhati hai ki strong hona aur respectful hona ek saath possible hai.  
+        Thank you sir, humein discipline, responsibility aur leadership ka real meaning sikhane ke liye.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container fade">
+    <h2 class="title">Our Beautiful Memories 💙</h2>
+
+    <div class="flip-grid alt">
+
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">First Day 😅</div>
+          <div class="flip-back image-card"><img src="first day.jpeg"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">1st Batch 💙</div>
+          <div class="flip-back image-card"><img src="1st batch.jpeg"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">Girls Gang 💃</div>
+          <div class="flip-back image-card"><img src="girls group.jpeg"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">Late Night 🌙</div>
+          <div class="flip-back image-card"><img src="late night project.jpeg"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">Fun Times 😂</div>
+          <div class="flip-back image-card"><img src="masti time.jpeg"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">Coding Mode 💻</div>
+          <div class="flip-back image-card"><img src="e.jpeg"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">Pookie sir</div>
+          <div class="flip-back image-card"><img src="pooki sir.jpeg"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">Pookie sir 2</div>
+          <div class="flip-back image-card"><img src="pooki 2.png"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">1st picnik</div>
+          <div class="flip-back image-card"><img src="pic 1.png"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">2nd picnik</div>
+          <div class="flip-back image-card"><img src="picknic.jpeg"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">Best memories</div>
+          <div class="flip-back image-card"><img src="best memo.png"></div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front text-card">Our TS Family 👨‍👩‍👧‍👦</div>
+          <div class="flip-back image-card"><img src="all ts family.jpeg"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container notes fade">
+    <div class="note">
+      <div class="note-inner">
+        <div class="note-face">Tap 💜</div>
+        <div class="note-face note-back">Thank you for believing</div>
+      </div>
+    </div>
+    <div class="note">
+      <div class="note-inner">
+        <div class="note-face">Tap 💜</div>
+        <div class="note-face note-back">Thank you for guiding</div>
+      </div>
+    </div>
+    <div class="note">
+      <div class="note-inner">
+        <div class="note-face">Tap 💜</div>
+        <div class="note-face note-back">Thank you for inspiring</div>
+      </div>
+  </div>
+  </div>
+</section>
+
+<section>
+  <div class="container fade">
+    <h2 class="title">🎥 1 Year of Memories</h2>
+    <p style="margin-bottom:30px;">
+      From first-day nervousness to feeling like family — every moment is saved in our hearts 💜
+    </p>
+
+    <a href="WhatsApp Video 2026-01-10 at 11.10.03 AM.mp4" class="video-card">
+      <div class="video-overlay">
+        <span>▶ Play Our Journey</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<section>
+  <div class="container final fade">
+    <h2 class="title">To Techno Skill, With Love</h2>
+    <p>As we close this chapter, we carry forward not just skills, but memories and gratitude.</p>
+     <a href="wish.html" class="final-btn">Click here 💌</a>
+  </div>
+</section>
+</body>
+</html>
